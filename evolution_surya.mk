@@ -21,12 +21,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from surya device
 $(call inherit-product, device/xiaomi/surya/device.mk)
 
-# Inherit from common WaveOS configuration
+# Inherit from common Evolution X configuration
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/wave/configs/common.mk)
+TARGET_INCLUDE_PIXEL_CHARGER := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_FACE_UNLOCK_SUPPORTED := true
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
 # Device identifier
-PRODUCT_NAME := wave_surya
+PRODUCT_NAME := evolution_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3
